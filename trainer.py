@@ -2,12 +2,12 @@ from random import randint
 
 """
 what does a trainer need?
--name
--gender
--pokemon 
--items
--money
--id
+-name    -string
+-gender  -string
+-pokemon -dictionary of pokemon       -this is to give each pokemon a number slot to know which pokemon the trainer wants out first  "1-6 for the position : pokemon"
+-items   -dictionary of items         -this is to give a corisponding amout of the item for each one we have                         "item : how many"
+-money   -int
+-id      -int 
 """
 
 
@@ -49,5 +49,13 @@ class Trainer():
             self.money -= amount 
         print("{name} you have {money} money now.")
     
+    #now we need to remove and add pokemon
 
+    def add_pokemon(self,pokemon):
+        if(self.pokemon.len() < 6):
+            self.pokemon[self.pokemon.len()] = pokemon
+        else:
+            print("You already have a full party. Please remove a pokemon before trying again.")
+    def remove_pokemon(self, index):
+        self.pokemon.remove(index)
     
