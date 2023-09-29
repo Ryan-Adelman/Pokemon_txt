@@ -58,4 +58,12 @@ class Trainer():
             print("You already have a full party. Please remove a pokemon before trying again.")
     def remove_pokemon(self, index):
         self.pokemon.remove(index)
+    def get_pokemon(self, index):
+        return self.pokemon[index]
+    def get_pokemon_index(self,name):
+        for mon in pokemon:
+            if mon == name:
+                return mon
+            else:
+                return False
     
